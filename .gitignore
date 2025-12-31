@@ -2,8 +2,6 @@
 dataset/train/
 dataset/valid/
 dataset/test/
-dataset/README.roboflow.txt/
-dataset/data.yaml
 dataset/*.cache
 
 # Model weights - thường quá lớn
