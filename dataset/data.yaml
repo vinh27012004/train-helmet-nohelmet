@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['rider_with_helmet', 'rider_without_helmet']
+
+roboflow:
+  workspace: deeplearning-h05id
+  project: helmet_nohelmet-mqica
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/deeplearning-h05id/helmet_nohelmet-mqica/1
