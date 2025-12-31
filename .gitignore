@@ -1,0 +1,46 @@
+# Dataset - không đẩy lên git
+dataset/train/
+dataset/valid/
+dataset/test/
+dataset/*.cache
+
+# Model weights - thường quá lớn
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Training results
+runs/
+wandb/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+
