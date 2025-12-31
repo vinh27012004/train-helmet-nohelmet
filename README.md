@@ -55,27 +55,27 @@ Sau khi training, kết quả sẽ được lưu tại:
 
 ## Test ảnh
 
-Sau khi training xong, bạn có thể test model trên ảnh:
+Sau khi training xong, bạn có thể test model trên ảnh bằng script `track.py` ở chế độ detection:
 
-### Cách 1: Script đầy đủ (có menu)
+### Cách 1: Chế độ tương tác (Menu)
 
 ```bash
-python test.py
+python track.py
 ```
 
-Script này cho phép:
-- Test một ảnh
-- Test thư mục ảnh
-- Test trên dataset test
+Chọn option "2. Detect ảnh" và làm theo hướng dẫn.
 
-### Cách 2: Script đơn giản (test nhanh)
+### Cách 2: Dòng lệnh
 
 ```bash
-# Test một ảnh cụ thể
-python test_simple.py "path/to/image.jpg"
+# Detect một ảnh
+python track.py --mode image --source image.jpg
 
-# Hoặc chạy không tham số để test ảnh mẫu từ test dataset
-python test_simple.py
+# Detect thư mục ảnh
+python track.py --mode image --source folder/
+
+# Với các tùy chọn
+python track.py --mode image --source image.jpg --conf 0.3 --show
 ```
 
 ### Sử dụng trong code Python
@@ -101,13 +101,12 @@ for result in results:
 ## Kết quả test
 
 Ảnh kết quả sẽ được lưu tại:
-- `runs/detect/test-predict/` - Khi test ảnh đơn hoặc thư mục
-- `runs/detect/test-dataset/` - Khi test trên dataset test
+- `runs/detect/helmet-detect/` - Khi detect ảnh đơn hoặc thư mục
 
 ## Tracking và Detection
 
 Sau khi training, bạn có thể sử dụng script `track.py` để:
-- **Track objects trong video** (theo dõi người có/không có mũ bảo hiểm qua các frame)
+- **Track objects trong video** (theo dõi người có/không có mũ bảo hiểm qua các frame với tracking ID)
 - **Detect objects trong ảnh** (phát hiện người có/không có mũ bảo hiểm trong ảnh)
 
 ### Cách 1: Chế độ tương tác (Menu)
@@ -158,6 +157,10 @@ python track.py --mode image --source image.jpg --conf 0.3 --show
 - `--tracker`: Loại tracker cho video - `bytetrack.yaml` hoặc `botsort.yaml` (mặc định: `bytetrack.yaml`)
 - `--show`: Hiển thị kết quả real-time
 - `--output`: Thư mục lưu kết quả (mặc định: `runs/track` cho video, `runs/detect` cho ảnh)
+- `--args`: Đường dẫn đến `args.yaml` để load cấu hình từ training (mặc định: tự động tìm tại `runs/detect/helmet-detection/args.yaml`)
+- `--no-args`: Không sử dụng cấu hình từ `args.yaml`
+
+**Lưu ý**: Script sẽ tự động load cấu hình từ `args.yaml` (nếu có) để sử dụng các tham số như `imgsz`, `iou`, `device` từ quá trình training.
 
 ### Kết quả
 
