@@ -25,7 +25,7 @@ if __name__ == '__main__':
     # Train model
     results = model.train(
         data='dataset/data.yaml',  # Đường dẫn đến file cấu hình dataset
-        epochs=100,                 # Số epoch (có thể tăng nếu cần)
+        epochs=50,                 # Số epoch (có thể tăng nếu cần)
         imgsz=640,                  # Kích thước ảnh input
         batch=16,                   # Batch size (giảm nếu GPU hết bộ nhớ)
         device=0 if torch.cuda.is_available() else 'cpu',  # Sử dụng GPU nếu có
@@ -33,7 +33,7 @@ if __name__ == '__main__':
         project='runs/detect',      # Thư mục lưu kết quả
         name='helmet-detection',    # Tên thư mục experiment
         exist_ok=True,              # Ghi đè nếu thư mục đã tồn tại
-        patience=50,                # Early stopping patience
+        patience=20,                # Early stopping patience
         save=True,                  # Lưu checkpoint
         save_period=10,             # Lưu checkpoint mỗi 10 epoch
         val=True,                   # Validate trong quá trình train
