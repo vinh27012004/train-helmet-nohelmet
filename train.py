@@ -20,7 +20,7 @@ if __name__ == '__main__':
     # m = medium
     # l = large
     # x = xlarge (lớn nhất, chính xác nhất)
-    model = YOLO('yolo11n.pt')  # Bắt đầu với model nhỏ, có thể đổi thành yolov11s.pt, yolov11m.pt, etc.
+    model = YOLO('yolo11s.pt')  # Bắt đầu với model nhỏ, có thể đổi thành yolov11s.pt, yolov11m.pt, etc.
 
     # Train model
     results = model.train(
