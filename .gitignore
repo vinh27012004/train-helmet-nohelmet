@@ -12,6 +12,7 @@ dataset/*.cache
 
 # Training results
 wandb/
+runs/
 
 # Python
 __pycache__/
